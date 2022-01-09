@@ -1,13 +1,10 @@
-package com.alvaro.room.testing
+package com.alvaro.room.testing.data.cache
 
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import androidx.room.Room
 import androidx.test.core.app.ApplicationProvider
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.test.filters.SmallTest
-import com.alvaro.room.testing.framework.data.cache.NoteDao
-import com.alvaro.room.testing.framework.data.cache.NoteDatabase
-import com.alvaro.room.testing.framework.data.cache.NoteEntity
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.runBlocking
 import org.junit.After
@@ -20,6 +17,8 @@ import kotlin.random.Random
 
 /**
  * 1. Success insert new note
+ * 2. Success get a note by id
+ * 3. Success insert note list
  */
 @ExperimentalCoroutinesApi
 @RunWith(AndroidJUnit4::class)

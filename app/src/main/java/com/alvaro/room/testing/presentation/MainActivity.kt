@@ -1,4 +1,4 @@
-package com.alvaro.room.testing.framework.presentation
+package com.alvaro.room.testing.presentation
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

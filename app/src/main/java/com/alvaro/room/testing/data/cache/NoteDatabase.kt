@@ -1,4 +1,4 @@
-package com.alvaro.room.testing.framework.data.cache
+package com.alvaro.room.testing.data.cache
 
 import android.content.Context
 import androidx.room.Database
