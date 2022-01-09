@@ -15,13 +15,20 @@ class SaveNote(
         emit(ViewState.Loading(progressBarState = ProgressBarState.Loading))
         try {
 
-            emit(ViewState.Success( noteCache.insertNote(note = note) ))
+            noteCache.insertNote(note = note)
+
+            emit(ViewState.Success(MSG_SUCCESS))
         } catch (e: Exception) {
-            emit(ViewState.Error(message = e.localizedMessage ?: "Error something"))
+            emit(ViewState.Error(message = e.localizedMessage ?: MSG_ERROR))
         } finally {
             emit(ViewState.Loading(progressBarState = ProgressBarState.Idle))
         }
 
+    }
+
+    companion object {
+        const val MSG_SUCCESS= "Added note successfully"
+        const val MSG_ERROR= "Error inserting note"
     }
 
 }

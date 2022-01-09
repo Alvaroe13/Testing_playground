@@ -53,11 +53,7 @@ class SaveNoteTest {
 
         //confirm no error thrown when added new note
         assert(emissions[1] is ViewState.Success)
-
-        // check that indeed such note now it's in the cache
-       /* val listUpdated = noteCacheFake.getAllNotes()
-        println("TAGTAG size ${listUpdated.size} , size 2 ${notesInCache.size}")
-        assert(listUpdated.size == notesInCache.size + 1)*/
+        assert((emissions[1] as ViewState.Success).data == SaveNote.MSG_SUCCESS)
 
         //confirms pb state is idle
         assert(emissions[2] == ViewState.Loading(progressBarState = ProgressBarState.Idle))
