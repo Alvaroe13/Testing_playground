@@ -7,17 +7,18 @@ import com.alvaro.room.testing.util.ViewState
 import kotlinx.coroutines.flow.flow
 
 class SaveNote(
-    private val databaseCache : NoteCache
+    private val noteCache: NoteCache
 ) {
 
-    fun execute(note : NoteEntity) = flow {
+    fun execute(note: NoteEntity) = flow {
 
         emit(ViewState.Loading(progressBarState = ProgressBarState.Loading))
         try {
-            emit(ViewState.Success(databaseCache.saveNote(note =  note )))
-        }catch (e :Exception){
+
+            emit(ViewState.Success( noteCache.insertNote(note = note) ))
+        } catch (e: Exception) {
             emit(ViewState.Error(message = e.localizedMessage ?: "Error something"))
-        }finally{
+        } finally {
             emit(ViewState.Loading(progressBarState = ProgressBarState.Idle))
         }
 

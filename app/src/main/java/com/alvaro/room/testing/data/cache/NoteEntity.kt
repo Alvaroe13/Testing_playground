@@ -14,9 +14,9 @@ data class NoteEntity(
     var body: String,
 
     @ColumnInfo(name = "priority")
-    var priority: Int,
+    var priority: String,
 
     @PrimaryKey(autoGenerate = false)
     @ColumnInfo(name = "id")
-    var id: Int,
+    var id: String,
 )
